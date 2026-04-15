@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      <Box minH="100vh">
+      <Box minH={"100vh"}>
         <Navbar/>
         <Routes>
           <Route path="/" element={<HomePage/>}/>

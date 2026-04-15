@@ -1,8 +1,8 @@
-import React from 'react'
+import { Container } from "@chakra-ui/react";
 
 const Navbar = () => {
   return (
-    <div>Navbar</div>
+    <Container maxW={"1140px"}>Navbar</Container>
   )
 }
 
