@@ -1,4 +1,4 @@
-import { Container } from "@chakra-ui/react";
+import { Container, HStack } from "@chakra-ui/react";
 
 const Navbar = () => {
   return (
@@ -13,10 +13,20 @@ const Navbar = () => {
             }}
         >
             <Text
-            
+                fontSize={{base: "22", sm: "28"}}
+                fontWeight={"bold"}
+                textTransform={"uppercase"}
+                textAlign={"center"}
+                bgGradient={"linear(to-r, cyan.400, purple.500)"}
+                bgClip={"text"}
             >
-
+              <Link to={"/"}>Product Store  🛒</Link>               
             </Text>
+            <HStack spacing={2} alignItems={"center"}>
+                <Link to={"/create"}>
+                    <Button></Button>
+                </Link>
+            </HStack>    
         </Flex>
     </Container>
   )
