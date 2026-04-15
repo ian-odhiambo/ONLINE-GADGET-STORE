@@ -46,5 +46,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-//<IoMoon/> : <LuSun/>
