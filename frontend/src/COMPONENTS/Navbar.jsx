@@ -24,7 +24,9 @@ const Navbar = () => {
             </Text>
             <HStack spacing={2} alignItems={"center"}>
                 <Link to={"/create"}>
-                    <Button></Button>
+                    <Button>
+                        <PlusSquareIcon/>
+                    </Button>
                 </Link>
             </HStack>    
         </Flex>
