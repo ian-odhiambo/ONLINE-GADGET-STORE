@@ -14,6 +14,10 @@ const CreatePage = () => {
             >
                 Create New Product
             </Heading>
+            <Box
+            >
+
+            </Box>
         </VStack>
     </Container>
   )
