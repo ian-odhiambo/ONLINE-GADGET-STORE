@@ -1,23 +1,26 @@
-import {create} from 'zustand';
+import { create } from 'zustand';
 
-export const useProductStore = create((set) =>({
+export const useProductStore = create((set) => ({
     products: [],
-    setProducts:(products) => set({ products }),
+    setProducts: (products) => set({ products }),
 
-    createProduct: async(newProduct) => {
-        if(!newProduct.name || !newProduct.image || !newProduct.price) {
-            return{success:false, message:"Please fill in all fields."}
+    createProduct: async (newProduct) => {
+        if (!newProduct.name || !newProduct.image || !newProduct.price) {
+            return { success: false, message: "Please fill in all fields." }
         }
         const res = await fetch("/api/v1/products", {
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json"
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
             },
-            body:JSON.stringify(newProduct)
+            body: JSON.stringify(newProduct)
         })
         const data = await res.json();
-        set((state) =>({products:[...state.product, data.data] }));
-        return { success:false, message:"Product created succesfully." };
+        
+       
+        set((state) => ({ products: [...state.products, data.data] }));
+        
+        
+        return { success: false, message: "Product created successfully." };
     }
 }))
-
