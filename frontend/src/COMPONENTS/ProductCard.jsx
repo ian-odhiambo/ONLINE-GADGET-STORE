@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Heading, Image , Text} from '@chakra-ui/react'
+import { Box, Image, Heading, Text, HStack, IconButton, useColorModeValue } from "@chakra-ui/react"
 
 const ProductCard = ({product}) => {
   return (
@@ -18,6 +18,12 @@ const ProductCard = ({product}) => {
             <Text fontSize={"xl"} fontWeight={"bold"} color={textColor}>
                 KSH{product.price}
             </Text>
+
+            <HStack spacing={2}>
+                <IconButton icon={<EditIcon/>} onClick={onOpen} colorScheme="blue"/>
+                <IconButton icon={<DeleteIcon/>} onClick={() => handleDelete(product._id)} 
+                colorScheme="red"/>
+            </HStack>
         </Box>
     </Box>
   )
