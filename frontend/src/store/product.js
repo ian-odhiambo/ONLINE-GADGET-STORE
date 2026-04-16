@@ -16,6 +16,7 @@ export const useProductStore = create((set) =>({
             body:JSON.stringify(newProduct)
         })
         const data = await res.json();
+        set((state) =>({products:[...state.product, data.data] }));
     }
 }))
 
