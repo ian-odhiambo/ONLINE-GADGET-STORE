@@ -1,5 +1,5 @@
 import {useState} from "react"
-import { Box, Container, Heading, useColorModeValue, VStack } from '@chakra-ui/react'
+import { Box, Button, Container, Heading, Input, useColorModeValue, VStack } from '@chakra-ui/react'
 
 const CreatePage = () => {
     const[newProduct, setNewProduct] = useState({
