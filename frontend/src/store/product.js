@@ -5,4 +5,3 @@ export const useProductStore = create((set) =>({
     setProducts:(products) => set({ products })
 }))
 
-const[state, setState] = useState([])

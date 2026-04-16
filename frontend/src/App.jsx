@@ -6,6 +6,7 @@ import CreatePage from "./PAGES/CreatePage";
 import Navbar from "./COMPONENTS/Navbar";
 
 function App() {
+  const { products} = useProductStore();
   return (
     <>
       <Box minH={"100vh"} bg={useColorModeValue("gray.100", "gray.900")}>
