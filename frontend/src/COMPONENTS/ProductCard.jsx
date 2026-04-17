@@ -17,7 +17,7 @@ const ProductCard = ({product}) => {
                 title: "Error",
                 description: message,
                 status: "error",
-                duration: 5000,
+                duration: 3000,
                 isClosable: true,
             })
         } else {
@@ -25,7 +25,7 @@ const ProductCard = ({product}) => {
                 title: "Success",
                 description: message,
                 status: "success",
-                duration: 5000,
+                duration: 3000,
                 isClosable: true,
             })
         }
