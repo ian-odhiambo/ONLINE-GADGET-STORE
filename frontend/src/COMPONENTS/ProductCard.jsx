@@ -129,13 +129,10 @@ const ProductCard = ({product}) => {
                         </VStack>   
                     </ModalBody>
                     <ModalFooter>
-                        <Button 
-                            colorScheme='blue' 
-                            mr={3} 
-                            onClick={handleUpdateProduct}  // Fixed: no parameters needed
-                        >
-                            Update
-                        </Button>
+                        <Button colorScheme='blue' mr={3} 
+                       onClick={() => handleUpdateProduct(product._id, updatedProduct) }>
+                        Update
+                     </Button>
                         <Button variant="ghost" onClick={onClose}>
                             Cancel
                         </Button>
