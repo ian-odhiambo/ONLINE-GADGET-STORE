@@ -39,6 +39,7 @@ const ProductCard = ({product}) => {
                 duration: 3000,
                 isClosable: true,
             })
+              onClose();// Close the modal on success
         }
     }
 
