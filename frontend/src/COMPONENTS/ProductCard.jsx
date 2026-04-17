@@ -43,7 +43,7 @@ const ProductCard = ({product}) => {
     }
 
     const handleUpdateProduct = async () => {
-        const {success, message} = await updateProduct(product._id, updatedProduct);
+        const {success, message} = await updateProduct(product._id, updateProduct);
         if(!success) {
             toast({
                 title: "Error",
@@ -62,6 +62,12 @@ const ProductCard = ({product}) => {
             })
             onClose(); // Close the modal on success
         }
+    };
+
+    
+    const handleUpdateProduct = async (pid, updateProduct) =>{
+        await updatedProduct(pid, updatedProduct);
+        onClose();
     }
 
     return (
