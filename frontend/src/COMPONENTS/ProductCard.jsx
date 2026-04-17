@@ -1,6 +1,7 @@
 import React from 'react'
 import { EditIcon, DeleteIcon } from "@chakra-ui/icons"  
 import { Box, Image, Heading, Text, HStack, IconButton, useColorModeValue, } from "@chakra-ui/react";
+import { useToast } from '@chakra-ui/react'
 import { useProductStore } from '../store/product.js';
 
 const ProductCard = ({product}) => {
