@@ -129,7 +129,7 @@ const ProductCard = ({product}) => {
                     </ModalBody>
                     <ModalFooter>
                      <Button colorScheme='blue' mr={3} 
-                     onClick={handleUpdateProduct}>
+                     onClick={() => handleUpdateProduct(product._id, updatedProduct) }>
                         Update
                      </Button>
                      <Button variant="ghost" onClick={onClose}>
