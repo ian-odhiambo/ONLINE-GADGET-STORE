@@ -58,8 +58,39 @@ const ProductCard = ({product}) => {
 
         <Modal isOpen={isOpen} onClose={onClose}>
          <ModalOverlay />
-            <ModalContent></ModalContent>
+            <ModalContent>
              <ModalHeaders>Update Product</ModalHeaders>
+             <ModalCloseButton />
+                <ModalBody>
+                 <VStack spacing={4}>
+
+                            <Input 
+                            placeholder='Product Name' 
+                            name= "name"
+                            value={updatedProduct.name} 
+                            onChange={(e) => setNewProduct({...newProduct, name: e.target.value})}             
+                            />
+                 
+                            <Input 
+                            placeholder='Price' 
+                            name= "price"
+                            type= "number"
+                            value={updatedProduct.price} 
+                            onChange={(e) => setNewProduct({...newProduct, price: e.target.value})}                    
+                            />
+                 
+                            <Input 
+                            placeholder='Image URL' 
+                            name= "image"                   
+                            value={updatedProduct.image} 
+                            onChange={(e) => setNewProduct({...newProduct, image: e.target.value})}                   
+                            />
+                            <Button colorScheme='blue' onClick={handleAddProduct} w='full'>
+                             Add Product
+                            </Button>
+                    </VStack>   
+                </ModalBody>
+              </ModalContent>  
         </Modal>
     </Box>
   )
