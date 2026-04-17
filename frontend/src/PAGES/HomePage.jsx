@@ -38,7 +38,8 @@ const HomePage = () => {
           ))}
         </SimpleGrid>
 
-        <Text 
+        {products.length === 0 && (
+          <Text 
         fontSize="xl" 
         textAlign={"center"} 
         fontWeight={"bold"} 
@@ -51,6 +52,7 @@ const HomePage = () => {
             </Text>
           </Link>
         </Text>
+        )}
       </VStack>
     </Container>
   )
