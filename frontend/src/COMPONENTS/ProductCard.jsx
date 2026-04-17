@@ -8,7 +8,8 @@ const ProductCard = ({product}) => {
     const textColor = useColorModeValue("gray.600", "gray.200");
     const bg = useColorModeValue("white", "gray.800");
     const { deleteProduct } = useProductStore();
-    const toast = useToast()
+    const toast = useToast();
+    const { isOpen, onOpen, onClose } = useDisclosure();
 
     const handleDeleteProduct = async (pid) => {
         const {success, message} = await deleteProduct(pid);
@@ -54,6 +55,12 @@ const ProductCard = ({product}) => {
                 <IconButton icon={<DeleteIcon/>} onClick= {() => handleDeleteProduct(product._id)} colorScheme="red"/>
             </HStack>
         </Box>
+
+        <Modal isOpen={isOpen} onClose={onClose}>
+         <ModalOverlay />
+            <ModalContent></ModalContent>
+             <ModalHeaders>Update Product</ModalHeaders>
+        </Modal>
     </Box>
   )
 }
