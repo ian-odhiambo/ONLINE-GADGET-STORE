@@ -14,7 +14,7 @@ const ProductCard = ({product}) => {
     const toast = useToast();
     const { isOpen, onOpen, onClose } = useDisclosure();
     
-    // State for the updated product
+    
     const [updatedProduct, setUpdatedProduct] = useState({
         name: product.name,
         price: product.price,
@@ -42,8 +42,9 @@ const ProductCard = ({product}) => {
         }
     }
 
+    
     const handleUpdateProduct = async () => {
-        const {success, message} = await updateProduct(product._id, updateProduct);
+        const {success, message} = await updateProduct(product._id, updatedProduct);
         if(!success) {
             toast({
                 title: "Error",
@@ -59,16 +60,10 @@ const ProductCard = ({product}) => {
                 status: "success",
                 duration: 3000,
                 isClosable: true,
-            })
+            });
             onClose(); // Close the modal on success
         }
     };
-
-    
-    const handleUpdateProduct = async (pid, updateProduct) =>{
-        await updatedProduct(pid, updatedProduct);
-        onClose();
-    }
 
     return (
         <Box
@@ -134,13 +129,16 @@ const ProductCard = ({product}) => {
                         </VStack>   
                     </ModalBody>
                     <ModalFooter>
-                     <Button colorScheme='blue' mr={3} 
-                     onClick={() => handleUpdateProduct(product._id, updatedProduct) }>
-                        Update
-                     </Button>
-                     <Button variant="ghost" onClick={onClose}>
-                        Cancel
-                     </Button>
+                        <Button 
+                            colorScheme='blue' 
+                            mr={3} 
+                            onClick={handleUpdateProduct}  // Fixed: no parameters needed
+                        >
+                            Update
+                        </Button>
+                        <Button variant="ghost" onClick={onClose}>
+                            Cancel
+                        </Button>
                     </ModalFooter>
                 </ModalContent>  
             </Modal>
