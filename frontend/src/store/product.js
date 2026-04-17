@@ -51,10 +51,9 @@ export const useProductStore = create((set) => ({
     if (!data.success) return { success: false, message: data.message };
     
     set((state) => ({
-      products: state.products.map((product) => product._id === pid ? data.data : product
-      ),
+      products: state.products.map((product) => product._id === pid ? data.data : product),
     }));
     
-    return { success: true, message: data.message };  // Added return statement
+    
   },
 }));

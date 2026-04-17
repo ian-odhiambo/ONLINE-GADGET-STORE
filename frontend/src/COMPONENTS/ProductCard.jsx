@@ -128,7 +128,8 @@ const ProductCard = ({product}) => {
                         </VStack>   
                     </ModalBody>
                     <ModalFooter>
-                     <Button colorScheme='blue' mr={3}  >
+                     <Button colorScheme='blue' mr={3} 
+                     onClick={handleUpdateProduct}>
                         Update
                      </Button>
                      <Button variant="ghost" onClick={onClose}>
