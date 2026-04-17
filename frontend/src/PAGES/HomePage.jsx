@@ -44,7 +44,7 @@ const HomePage = () => {
             fontWeight={"bold"}
             color="gray.500"
           >
-            No Products Found 😢{""}https://images.unsplash.com/photo-1659083725992-9d88c12e719c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJvb20lMjBtaWN8ZW58MHx8MHx8fDA%3D
+            No Products Found 😢{""}
             <Link to="/create">
               <Text
                 as="span"
