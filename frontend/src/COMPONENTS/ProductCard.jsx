@@ -68,7 +68,7 @@ const ProductCard = ({product}) => {
                             placeholder='Product Name' 
                             name= "name"
                             value={updatedProduct.name} 
-                            onChange={(e) => setNewProduct({...newProduct, name: e.target.value})}             
+                            onChange={(e) => setUpdateProduct({...newProduct, name: e.target.value})}             
                             />
                  
                             <Input 
@@ -76,14 +76,14 @@ const ProductCard = ({product}) => {
                             name= "price"
                             type= "number"
                             value={updatedProduct.price} 
-                            onChange={(e) => setNewProduct({...newProduct, price: e.target.value})}                    
+                            onChange={(e) => setUpdateProduct({...newProduct, price: e.target.value})}                    
                             />
                  
                             <Input 
                             placeholder='Image URL' 
                             name= "image"                   
                             value={updatedProduct.image} 
-                            onChange={(e) => setNewProduct({...newProduct, image: e.target.value})}                   
+                            onChange={(e) => setUpdateProduct({...newProduct, image: e.target.value})}                   
                             />
                             <Button colorScheme='blue' onClick={handleAddProduct} w='full'>
                              Add Product
