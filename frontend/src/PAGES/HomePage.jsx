@@ -1,8 +1,8 @@
-import { Container, Text, VStack, SimpleGrid } from "@chakra-ui/react"
-import { Link } from "react-router-dom"
-import { useEffect } from "react"
-import { useProductStore } from "../store/product.js"
-import ProductCard from "../COMPONENTS/ProductCard.jsx"
+import { Container, Text, VStack, SimpleGrid } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useProductStore } from "../store/product.js";
+import ProductCard from "../COMPONENTS/ProductCard.jsx";
 
 const HomePage = () => {
 
@@ -34,7 +34,7 @@ const HomePage = () => {
         w={"full"}
         >
           {products.map((product) => (
-            <ProductCard key={product_id} product ={product}/>
+            <ProductCard key={product.id} product ={product}/>
           ))}
         </SimpleGrid>
 

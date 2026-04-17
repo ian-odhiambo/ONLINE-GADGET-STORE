@@ -1,7 +1,10 @@
 import React from 'react'
-import { Box, Image, Heading, Text, HStack, IconButton, useColorModeValue } from "@chakra-ui/react"
+import { EditIcon, DeleteIcon } from "@chakra-ui/icons"  
+import { Box, Image, Heading, Text, HStack, IconButton, useColorModeValue, } from "@chakra-ui/react"
 
 const ProductCard = ({product}) => {
+    const textColor = useColorModeValue("gray.600", "gray.200");
+    const bg = useColorModeValue("white", "gray.800");
   return (
     <Box
     shadow="lg"
@@ -9,6 +12,7 @@ const ProductCard = ({product}) => {
     overflow="hidden"
     transition="all 0.3s"
     _hover={{ transform: "translatey(-5px)", shadow: "xl" }}
+    bg={bg}
     >
         <Image src={product.image} alt={product.name} h={48} w="full" objectFit="cover"/>
         <Box p={4}>
@@ -20,9 +24,8 @@ const ProductCard = ({product}) => {
             </Text>
 
             <HStack spacing={2}>
-                <IconButton icon={<EditIcon/>} onClick={onOpen} colorScheme="blue"/>
-                <IconButton icon={<DeleteIcon/>} onClick={() => handleDelete(product._id)} 
-                colorScheme="red"/>
+                <IconButton icon={<EditIcon/>}  colorScheme="blue"/>
+                <IconButton icon={<DeleteIcon/>} colorScheme="red"/>
             </HStack>
         </Box>
     </Box>
