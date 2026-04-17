@@ -125,13 +125,6 @@ const ProductCard = ({product}) => {
                                 value={updatedProduct.image} 
                                 onChange={(e) => setUpdatedProduct({...updatedProduct, image: e.target.value})}                   
                             />
-                            <Button 
-                                colorScheme='blue' 
-                                onClick={handleUpdateProduct} 
-                                w='full'
-                            >
-                                Update Product
-                            </Button>
                         </VStack>   
                     </ModalBody>
                     <ModalFooter>
