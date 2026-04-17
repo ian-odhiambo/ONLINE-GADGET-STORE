@@ -3,7 +3,7 @@ import { EditIcon, DeleteIcon } from "@chakra-ui/icons"
 import { 
   Box, Image, Heading, Text, HStack, IconButton, useColorModeValue, 
   useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, 
-  ModalCloseButton, ModalBody, VStack, Input, Button, useToast
+  ModalCloseButton, ModalBody, ModalFooter, VStack, Input, Button, useToast
 } from "@chakra-ui/react";
 import { useProductStore } from '../store/product.js';
 
@@ -134,6 +134,14 @@ const ProductCard = ({product}) => {
                             </Button>
                         </VStack>   
                     </ModalBody>
+                    <ModalFooter>
+                     <Button colorScheme='blue' mr={3}  >
+                        Update
+                     </Button>
+                     <Button variant="ghost" onClick={onClose}>
+                        Cancel
+                     </Button>
+                    </ModalFooter>
                 </ModalContent>  
             </Modal>
         </Box>
