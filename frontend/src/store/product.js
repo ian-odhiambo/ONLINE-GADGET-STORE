@@ -32,5 +32,9 @@ export const useProductStore = create((set) => ({
         const res = await fetch(`/api/v1/products/${pid}`, {
             method: "DELETE",
         });
+        const data = await res.json();
+        if(!data.success) return { success: false, message: data.message };
+
+        set(state => ({ product: state.products.filter(products => product._id !==pid) }));
     }
 }))
