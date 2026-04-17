@@ -1,10 +1,17 @@
 import React from 'react'
 import { EditIcon, DeleteIcon } from "@chakra-ui/icons"  
-import { Box, Image, Heading, Text, HStack, IconButton, useColorModeValue, } from "@chakra-ui/react"
+import { Box, Image, Heading, Text, HStack, IconButton, useColorModeValue, } from "@chakra-ui/react";
+import { useProductStore } from '../store/product.js';
 
 const ProductCard = ({product}) => {
     const textColor = useColorModeValue("gray.600", "gray.200");
     const bg = useColorModeValue("white", "gray.800");
+    const { deleteProduct } = useProductStore();
+
+    const handleDeleteProduct = async (pid) => {
+        const {success, message} = await deleteProduct(pid);
+    }
+
   return (
     <Box
     shadow="lg"
@@ -25,7 +32,7 @@ const ProductCard = ({product}) => {
 
             <HStack spacing={2}>
                 <IconButton icon={<EditIcon/>}  colorScheme="blue"/>
-                <IconButton icon={<DeleteIcon/>} colorScheme="red"/>
+                <IconButton icon={<DeleteIcon/>} onClick= {() => handleDeleteProduct(product._id)} colorScheme="red"/>
             </HStack>
         </Box>
     </Box>
